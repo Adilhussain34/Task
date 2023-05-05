@@ -1,0 +1,28 @@
+<%- include('header')%> <%- include('nav')%>
+<ol class="list-group list-group-numbered container mt-5">
+    <h1 class="mb-4"><span class="text-danger">Status</span> tasks...</h1>
+
+    <% if(tasks.length === 0){ %>
+    <h2 class="text-danger mt-5 text-center">no tasks available 📝</h2>
+
+    <% }%>
+
+    <!--  -->
+
+    <% tasks.forEach(function(task){ %>
+    <li
+        class="list-group-item d-flex justify-content-between align-items-start mb-3"
+    >
+        <div class="ms-2 me-auto">
+            <h5 class="fw-bold">Title :- <%= task.title%></h5>
+            <small class="text-danger"> Discription :-<%= task.deadline %></small>
+            | <%= task.desc%>
+            <br>
+            <small class="text-success">Status :- <%= task.status%> </small>
+        </div>
+
+    </li>
+    <% }) %>
+</ol>
+
+<%- include('footer')%>

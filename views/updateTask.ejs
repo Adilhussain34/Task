@@ -1,0 +1,30 @@
+<%- include('header')%>
+<!--  -->
+<%- include('nav')%>
+<!--  -->
+
+<form class="container w-25 mt-5" action="/update/<%= task.id%>" method="post">
+    <h1><span class="text-danger">Update</span> task...</h1>
+    <input
+        class="form-control mb-3"
+        type="text"
+        name="title"
+        placeholder="Title"
+        value="<%= task.title%>"
+    />
+    <textarea
+        name="desc"
+        rows="7"
+        class="form-control mb-3"
+        placeholder="task description here..."
+    >
+<%= task.desc%></textarea
+    >
+    <button class="w-100 btn btn-success">Update Task</button>
+    <small
+        >* all the input fields are
+        <span class="text-danger">mendotary</span> to make task</small
+    >
+</form>
+
+<%- include('footer')%>
