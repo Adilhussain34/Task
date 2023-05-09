@@ -9,9 +9,11 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
+    "excel4node": "^1.8.2",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "mongoose": "^7.1.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "read-excel-file": "^5.6.1"
   }
 }
