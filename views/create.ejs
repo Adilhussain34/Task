@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        title | User Authentication App
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+    <%- include('nav') %>
+    <hr>
+    <form class="container w-25 mt-5" action="/create" method="post">
+        <h1 class="mb-4 text-center"><span class="text-danger ">Create</span> tasks...</h1>
+        <input
+            class="form-control mb-3"
+            type="text"
+            name="title"
+            placeholder="Title"
+            required
+        />
+        <textarea
+            name="desc"
+            rows="7"
+            class="form-control mb-3"
+            placeholder="task description here..."
+            required
+        ></textarea>
+        <br>
+
+        <label for="user_id">Select user</label>
+        <select name="user_id" id="" class="mb-2" required >
+            <% data.forEach(function(user){ %>
+                <option value="<%= user._id %>"><%= user.username %> ,(<%= user.email %>)</option>
+           <% } ) %>
+        </select>
+
+        <br>
+        <input class="mb-2" id="typeValue" type="radio" name="status" value="Pending" Checked>Pending
+        <input class="mb-3" id="typeValue" type="radio" name="status" value="Done">Done
+
+        <button class="w-100 btn btn-danger">Create Task</button>
+        <small
+            >* all the input fields are
+            <span class="text-danger">mendotary</span> to make task</small
+        >
+    </form>
+    
+</body>
+</html>
